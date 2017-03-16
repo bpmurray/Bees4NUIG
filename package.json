@@ -1,0 +1,23 @@
+{
+  "name": "Bees4NUIG",
+  "version": "0.0.0",
+  "description": "Node & Express prototype using Passport for authentication",
+  "keywords": [
+    "NUIG",
+    "bees",
+    "varroa"
+  ],
+  "author": "Brendan Murray <brendanpmurray@gmail.com> (http://brendansbeez.com)",
+  "license": "Apache 2.0",
+  "homepage": "https://github.com/bpmurray/Bees4NUIG",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bpmurray/Bees4NUIG.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bpmurray/Bees4NUIG/issues"
+  },
+  "dependencies": {
+  }
+}
+

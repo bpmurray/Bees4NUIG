@@ -83,3 +83,6 @@ Temporary Items
 # vi temporary files
 *.swp
 *~
+
+# My silly work files
+xx
