@@ -84,5 +84,8 @@ Temporary Items
 *.swp
 *~
 
+# Don't include the database
+*.db
+
 # My silly work files
 xx
