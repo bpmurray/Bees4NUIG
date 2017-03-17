@@ -16,6 +16,17 @@ The data will bw stored in a RDMBS rather than a NoSQL solution since it is stru
 The database schema looks like this:
 ![Database Schema](https://github.com/bpmurray/Bees4NUIG/blob/master/doc/schema.png)
 
+## Installation
+First download the code:
+```
+   git clone https://github.com/bpmurray/Bees4NUIG.git
+```
+Make sure you have installed [Node.js](https://nodejs.org) and then run:
+```
+    npm install
+```
+This will install all the required node modules and then it creates the empty database *db/varroacounts.db*.
+
 
 ## Timeline
 The intention is to have a version providing a reasonable level of functionality by mid-April 2017.
