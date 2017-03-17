@@ -84,8 +84,10 @@ Temporary Items
 *.swp
 *~
 
-# Don't include the database
+# Don't include built files
 *.db
+*.exe
+*.dll
 
 # My silly work files
 xx
