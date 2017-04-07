@@ -29,7 +29,7 @@ This will install all the required node modules and then it creates the empty da
 
 
 ## Timeline
-The intention is to have a version providing a reasonable level of functionality by mid-April 2017.
+The intention is to have a version providing a reasonable level of functionality by early May 2017.
 
 ## Volunteers
 If anyone, particularly students in NUIG, is interested in helping, please let me know.
