@@ -14,7 +14,7 @@ The user interface will be based on the [Excel](https://github.com/bpmurray/Bees
 The data will bw stored in a RDMBS rather than a NoSQL solution since it is structured and relational. Accessin the data will be done in a DB-agnostic way, to allow for drop-in replacements of the preferred DB. For the prototype, we will use SQLite because it is lightweight and simple and the potential data volume is rather small.
 
 The database schema looks like this:
-![Database Schema](https://github.com/bpmurray/Bees4NUIG/blob/master/doc/schema.png)
+![Database Schema](https://github.com/bpmurray/Bees4NUIG/blob/master/doc/schema.jpg)
 
 ## Installation
 First download the code:
