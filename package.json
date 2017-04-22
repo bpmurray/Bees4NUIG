@@ -1,7 +1,7 @@
 {
    "name": "bees4nuig",
    "version": "0.0.0",
-   "description": "Node & Express prototype using Passport for authentication",
+   "description": "Data entry and retrieval for NUIG Varroa project",
    "keywords": [
       "NUIG",
       "bees",
@@ -18,9 +18,21 @@
       "url": "https://github.com/bpmurray/Bees4NUIG/issues"
    },
    "dependencies": {
-      "sqlite3": "*"
+      "sqlite3": "latest",
+      "express" : "latest",
+      "ejs" : "latest",
+      "passport" : "latest",
+      "passport-local" : "latest",
+      "passport-local-authenticate" : "latest",
+      "connect-flash" : "latest",
+      "crypto" : "latest",
+      "morgan": "latest",
+      "body-parser": "latest",
+      "cookie-parser": "latest",
+      "method-override": "latest",
+      "express-session": "latest"
    },
-   "main": "index.js",
+   "main": "server.js",
    "directories": {
       "doc": "doc"
    },

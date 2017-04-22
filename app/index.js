@@ -1,4 +1,3 @@
-console.log("OK, I'm here!");
 
 //*** Below is some code to access the DB
 //*** API at: https://github.com/mapbox/node-sqlite3/wiki/API
@@ -39,26 +38,29 @@ function hashPassword(password, salt) {
    return hash.digest('hex');
 }
 
-passport.use(new LocalStrategy(function(username, password, done) {
-  db.get('SELECT salt FROM users WHERE username = ?', username, function(err, row) {
-    if (!row) return done(null, false);
-    var hash = hashPassword(password, row.salt);
-    db.get('SELECT username, id FROM users WHERE username = ? AND password = ?', username, hash, function(err, row) {
-      if (!row) return done(null, false);
-      return done(null, row);
-    });
-  });
+passport.use(new LocalStrategy(function(email, password, done) {
+   db.get('SELECT salt FROM beekeepers WHERE email = ?', email, function(err, row) {
+      if (!row)
+         return done(null, false);
+      var hash = hashPassword(password, row.salt);
+      db.get('SELECT beekeeperid, name, admin FROM beekeepers WHERE email = ? AND password = ?', email, hash, function(err, row) {
+         if (!row)
+            return done(null, false);
+         return done(null, row);
+      });
+   });
 }));
 
-passport.serializeUser(function(user, done) {
-  return done(null, user.id);
+passport.serializeUser(function(beekeeper, done) {
+   return done(null, beekeeper.beekeeperid);
 });
 
 passport.deserializeUser(function(id, done) {
-  db.get('SELECT id, username FROM users WHERE id = ?', id, function(err, row) {
-    if (!row) return done(null, false);
-    return done(null, row);
-  });
+   db.get('SELECT beekeeperid, name. email, admin FROM beekeeper WHERE beekeeperid = ?', id, function(err, row) {
+      if (!row)
+         return done(null, false);
+      return done(null, row);
+   });
 });
 
 // ...
