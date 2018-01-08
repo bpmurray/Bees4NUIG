@@ -3,6 +3,12 @@ This is to prototype the requirements of the NUIG researchers to capture data fr
 
 The intention is to also provide mechanisms for the researchers to extract the captured data in a simple way, avoiding duplicates.
 
+## Timeline
+The intention is to have a version providing a reasonable level of functionality by early May 2018.
+
+## Volunteers
+If anyone, particularly students in NUIG, is interested in helping, please let me know.
+
 ## Solution
 The solution should be as simple as possible. The prototype will use NodeJS as the server, with Express to manage the UI, with a TBD web-side framework to provide a good user experience.
 
@@ -16,6 +22,19 @@ The data will bw stored in a RDMBS rather than a NoSQL solution since it is stru
 The database schema looks like this:
 ![Database Schema](https://github.com/bpmurray/Bees4NUIG/blob/master/doc/schema.jpg)
 
+## REST Services
+REST services essentially manage the database and certain other encapsulated functionality. All connections will use SSL for security reasons. As usual, the services will follow the mapping to CRUD functions:
+* To create a new entity, use _POST_ to the relevant endpoint.
+* To update an entity's data, use _PUT_.
+* To remove an entity, use _DELETE_.
+* To retrieve an entity's data, use _GET_.
+
+The available entities correspond to the tables:
+* beekeeper
+* apiary
+* queen
+* inspection
+
 ## Installation
 First download the code:
 ```
@@ -27,9 +46,6 @@ Make sure you have installed [Node.js](https://nodejs.org) and then run:
 ```
 This will install all the required node modules and then it creates the empty database *db/varroacounts.db*.
 
+## Execution
 
-## Timeline
-The intention is to have a version providing a reasonable level of functionality by early May 2017.
 
-## Volunteers
-If anyone, particularly students in NUIG, is interested in helping, please let me know.
