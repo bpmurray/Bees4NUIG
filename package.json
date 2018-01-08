@@ -19,13 +19,12 @@
    },
    "dependencies": {
       "sqlite3": "latest",
-      "express" : "latest",
-      "ejs" : "latest",
-      "passport" : "latest",
-      "passport-local" : "latest",
-      "passport-local-authenticate" : "latest",
-      "connect-flash" : "latest",
-      "crypto" : "latest",
+      "express": "latest",
+      "ejs": "latest",
+      "passport": "latest",
+      "passport-local": "latest",
+      "passport-local-authenticate": "latest",
+      "connect-flash": "latest",
       "morgan": "latest",
       "body-parser": "latest",
       "cookie-parser": "latest",
@@ -42,4 +41,3 @@
       "start": "node index.js"
    }
 }
-
