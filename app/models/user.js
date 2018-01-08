@@ -1,8 +1,7 @@
 // app/models/user.js
 // load the things we need
 var sqlite3  = require('sqlite3');
-var ctrypto  = require('crypto');
-var configDB = require('./config/database.js')
+var configDB = require('../../config/database.js')
 
 // define the schema for our user model
 var User = function() {
