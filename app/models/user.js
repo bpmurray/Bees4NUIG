@@ -29,7 +29,11 @@ var User = function() {
    findOne = function(email, callback) {
       var found = false;
       var errcode = 0;
-      var db = new sqlite3.Database(configDB.url);
+      var db = new sqlite3.Database(configDB.url, (err) => {
+         if (err) {
+            return console.error(err.message);
+	 }
+      });
       db.all('SELECT * FROM beekeeper WHERE email="'+email+'"', function(err, rows) {  
          errcode = err;
          rows.forEach(function(row) {
@@ -41,14 +45,22 @@ var User = function() {
             this.admin    = row.admin;
          })
       });   
-      db.close();  
+      db.close(, (err) => {
+         if (err) {
+            return console.error(err.message);
+	 }
+      });  
       callback(errcode, found? this : null);
    }
 
    // Save the user
    save = function(callback) {
       var errcode = 0;
-      var db = new sqlite3.Database(configDB.url);
+      var db = new sqlite3.Database(configDB.url, (err) => {
+         if (err) {
+            return console.error(err.message);
+	 }
+      });
       var stmt = db.prepare("INSERT INTO beekeeper (name, email, password, admin, salt) VALUES (?,?,?,?,?)");
       stmt.run(this.name, this.email, this.password, this,admin, this.salt, function(err) {
          errcode = err;
