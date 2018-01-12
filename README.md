@@ -17,23 +17,33 @@ One aspect of the solution is authentication and the associated registration. Th
 The user interface will be based on the [Excel](https://github.com/bpmurray/Bees4NUIG/blob/master/docs/Inspection-form-Excel-version.xls) and [PDF](https://github.com/bpmurray/Bees4NUIG/blob/master/docs/Inspection%20form%20Printable%20version.pdf) documents sent to beekeepers in 2016.
 
 ## Database
-The data will bw stored in a RDMBS rather than a NoSQL solution since it is structured and relational. Accessin the data will be done in a DB-agnostic way, to allow for drop-in replacements of the preferred DB. For the prototype, we will use SQLite because it is lightweight and simple and the potential data volume is rather small.
+The data will be stored in a RDMBS rather than a NoSQL solution since it is structured and relational. Accessing the data will be done in a DB-agnostic way, to allow for drop-in replacements of the preferred DB. Initially we will use SQLite because it is lightweight and simple, and the potential data volume is rather small.
 
 The database schema looks like this:
 ![Database Schema](https://github.com/bpmurray/Bees4NUIG/blob/master/doc/schema.jpg)
 
 ## REST Services
 REST services essentially manage the database and certain other encapsulated functionality. All connections will use SSL for security reasons. As usual, the services will follow the mapping to CRUD functions:
-* To create a new entity, use _POST_ to the relevant endpoint.
-* To update an entity's data, use _PUT_.
-* To remove an entity, use _DELETE_.
-* To retrieve an entity's data, use _GET_.
+- To create a new entity, use _POST_ to the relevant endpoint.
+- To update an entity's data, use ~~_PUT_~~ ... because of URL data size limitations, we will use _POST_ here.
+- To retrieve an entity's data, use _GET_.
+- To delete an entity, use _DELETE_. Note that the API will delete associated relations and, in general, preserver referential integrity.
 
 The available entities correspond to the tables:
-* beekeeper
-* apiary
-* queen
-* inspection
+- beekeeper
+- apiary
+- queen
+- inspection
+
+####REST URLs
+All REST URLs will have the format:
+```
+GET|POST|DELETE _baseAddress/entity?data=name-value pairs_
+```
+For example, reading a beekeeper's apiaries would look like:
+```
+GET .../apiary?beekeeper=12345
+```
 
 ## Installation
 First download the code:
