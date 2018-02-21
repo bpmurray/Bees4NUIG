@@ -15,7 +15,7 @@ The solution should be as simple as possible. The initial idea was to use NodeJS
 The user interface will be based on the [Excel](https://github.com/bpmurray/Bees4NUIG/blob/master/docs/Inspection-form-Excel-version.xls) and [PDF](https://github.com/bpmurray/Bees4NUIG/blob/master/docs/Inspection%20form%20Printable%20version.pdf) documents sent to beekeepers in 2016.
 
 ## Database
-The data will be stored in a RDMBS rather than a NoSQL solution since it is structured and relational. Accessing the data will be done in a DB-agnostic way, to allow for drop-in replacements of the preferred DB. Initially we will use SQLite because it is lightweight and simple, and the potential data volume is rather small.
+The data will be stored in a RDMBS rather than a NoSQL solution since it is structured and relational. Accessing the data will be done in a DB-agnostic way, to allow for drop-in replacements of the preferred DB. We'll use MySQL since it's commonly available and well-known.
 
 The database schema looks like this:
 ![Database Schema](https://github.com/bpmurray/Bees4NUIG/blob/master/doc/schema.jpg)
