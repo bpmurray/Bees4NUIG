@@ -10,9 +10,7 @@ The intention is to have a version providing a reasonable level of functionality
 If anyone, particularly students in NUIG, is interested in helping, please let me know.
 
 ## Solution
-The solution should be as simple as possible. The prototype will use NodeJS as the server, with Express to manage the UI, with a TBD web-side framework to provide a good user experience.
-
-One aspect of the solution is authentication and the associated registration. This will be managed by passport.js.
+The solution should be as simple as possible. The initial idea was to use NodeJS/Express with SQLite but since finding hosting that supports Node proved to be difficult, the project has continued with  the commonly-available PHP and MySQL RDBMS. The GUI is a set of web pages using Twitter Bootstrap and JQuery.
 
 The user interface will be based on the [Excel](https://github.com/bpmurray/Bees4NUIG/blob/master/docs/Inspection-form-Excel-version.xls) and [PDF](https://github.com/bpmurray/Bees4NUIG/blob/master/docs/Inspection%20form%20Printable%20version.pdf) documents sent to beekeepers in 2016.
 
@@ -50,12 +48,8 @@ First download the code:
 ```
    git clone https://github.com/bpmurray/Bees4NUIG.git
 ```
-Make sure you have installed [Node.js](https://nodejs.org) and then run:
-```
-    npm install
-```
-This will install all the required node modules and then it creates the empty database *db/varroacounts.db*.
+Then run the DB creation script under the *setup* directory.
 
 ## Execution
-
+Host the solution on an Apache server.
 
