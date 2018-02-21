@@ -1,2 +1,0 @@
-1. Address incorporatioin of crypto into base node
-2. Address changes in express-session, in particular cookie name & repository.
